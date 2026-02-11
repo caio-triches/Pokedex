@@ -1,3 +1,59 @@
+.grass{
+    background-color: #00ff00;
+}
+.fire{
+    background-color: #FF0000;
+}
+.water{
+    background-color: #0077BE;
+}
+.electric{
+    background-color: #f5f50d;
+}
+.poison{
+    background-color: #800080;
+}
+.ground{
+    background-color: #A52A2A;
+}
+.flying{
+    background-color: #87CEEB;
+}
+.psychic{
+    background-color: #800080;
+}
+.bug{
+    background-color: #42e411;
+}
+.rock{
+    background-color: #A52A2A;
+}
+.ghost{
+    background-color: #800080;
+}
+.dragon{
+    background-color: #006400;
+}
+.dark{
+    background-color: #9b999b;
+}
+.steel{
+    background-color: #9b999b;
+}
+.fairy{
+    background-color: #D685AD;
+}
+.normal{
+    background-color: #A9A9A9;
+}
+.fighting{
+    background-color: #C22E28;
+}
+.ice{
+    background-color: #98D8D8;
+}
+
+
 .container{
     display: flex;
     align-items: center;
@@ -7,9 +63,14 @@
 .cardPokemon{
     display: grid;
     grid-template-columns: repeat(4, 1fr);
+    
 }
+a{
+    text-decoration: none;
+}
+
 article {
-    background-color: rgb(173, 51, 51);
+    background-color: #dedbde;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -17,10 +78,38 @@ article {
     height: 200px;
     width: 250px;
     margin: 10px 10px;
-    border: 1px solid black;
-    
+    border-radius: 10px;
+}
+
+
+
+article strong{
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
+}
+
+article h3{
+    font-size: 14px;
+    font-weight: bold;
+    color: #000000;
+    margin-bottom: 10px;
 }
 
 article img{
     height: 100px;
+    width: 100px;
 }
+
+.types{ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+}
+
+.types{
+    color: black;
+}
+
