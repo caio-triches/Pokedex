@@ -1,57 +1,21 @@
-.grass{
-    background-color: #00ff00;
-}
-.fire{
-    background-color: #FF0000;
-}
-.water{
-    background-color: #0077BE;
-}
-.electric{
-    background-color: #f5f50d;
-}
-.poison{
-    background-color: #800080;
-}
-.ground{
-    background-color: #A52A2A;
-}
-.flying{
-    background-color: #87CEEB;
-}
-.psychic{
-    background-color: #800080;
-}
-.bug{
-    background-color: #42e411;
-}
-.rock{
-    background-color: #A52A2A;
-}
-.ghost{
-    background-color: #800080;
-}
-.dragon{
-    background-color: #006400;
-}
-.dark{
-    background-color: #9b999b;
-}
-.steel{
-    background-color: #9b999b;
-}
-.fairy{
-    background-color: #D685AD;
-}
-.normal{
-    background-color: #A9A9A9;
-}
-.fighting{
-    background-color: #C22E28;
-}
-.ice{
-    background-color: #98D8D8;
-}
+.normal { background: linear-gradient(135deg, #A8A878 0%, #C6C6A7 100%); }
+.fire { background: linear-gradient(135deg, #F08030 0%, #F5AC78 100%); }
+.water { background: linear-gradient(135deg, #6890F0 0%, #9DB7F5 100%); }
+.electric { background: linear-gradient(135deg, #F8D030 0%, #FAE078 100%); }
+.grass { background: linear-gradient(135deg, #78C850 0%, #A7DB8D 100%); }
+.ice { background: linear-gradient(135deg, #98D8D8 0%, #BCE6E6 100%); }
+.fighting { background: linear-gradient(135deg, #C03028 0%, #D67873 100%); }
+.poison { background: linear-gradient(135deg, #A040A0 0%, #C183C1 100%); }
+.ground { background: linear-gradient(135deg, #E0C068 0%, #EBD69D 100%); }
+.flying { background: linear-gradient(135deg, #A890F0 0%, #C6B7F5 100%); }
+.psychic { background: linear-gradient(135deg, #F85888 0%, #FA92B2 100%); }
+.bug { background: linear-gradient(135deg, #A8B820 0%, #C6D16E 100%); }
+.rock { background: linear-gradient(135deg, #B8A038 0%, #D1C17D 100%); }
+.ghost { background: linear-gradient(135deg, #705898 0%, #A292BC 100%); }
+.dragon { background: linear-gradient(135deg, #7038F8 0%, #A27DFA 100%); }
+.dark { background: linear-gradient(135deg, #705848 0%, #A29288 100%); }
+.steel { background: linear-gradient(135deg, #B8B8D0 0%, #D1D1E0 100%); }
+.fairy { background: linear-gradient(135deg, #EE99AC 0%, #F4BDC9 100%); }
 
 
 .container{
@@ -70,46 +34,53 @@ a{
 }
 
 article {
-    background-color: #dedbde;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;    
-    height: 200px;
-    width: 250px;
+    height: 300px;
+    width: 400px;
     margin: 10px 10px;
     border-radius: 10px;
 }
 
 
 
+
 article strong{
     font-size: 14px;
     font-weight: bold;
-    color: #000000;
-    margin-bottom: 10px;
+    color: #D3D3D3;
+    margin-top: 5px;
 }
 
 article h3{
-    font-size: 14px;
+    font-size: 20px;
     font-weight: bold;
     color: #000000;
+    margin-top: 5px;
     margin-bottom: 10px;
 }
 
 article img{
-    height: 100px;
-    width: 100px;
+    height: 200px;
+    width: 200px;
 }
 
 .types{ 
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-right: 10px;
+    color: rgb(0, 0, 0);
+    gap: 20px;
 }
 
-.types{
-    color: black;
+
+.types span{
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 100px;
+    padding: 8px;
+    margin-bottom: 10px;
+    
 }
 

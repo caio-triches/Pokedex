@@ -1,34 +1,110 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import "./cardpoke.css"
 
 
 function CardPoke(){
     const { id } = useParams();
-    const [pokeinfo, setPokeinfo] = useState([]);
+    const [pokeinfo, setPokeinfo] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     useEffect(() => {
         async function getPokemon() {
             const response = await axios.get(`https://pokeapi.co/api/v2/pokemon/${id}/`)
-            .then(res => setPokeinfo(res))
-            console.log(pokeinfo)
+            setPokeinfo(response.data)
+            setLoading(false)
         }
 
-        getPokemon();
+        if(id){
+            getPokemon();
+        }
+
     },[id]);
 
-    return(
-        <div className="container">
-            <div className="cardimg">
-                <img src={`${pokeinfo.data.sprites.other["official-artwork"].front_default}`} alt={pokeinfo.data.id}/>
-                
-            </div>
 
-            <div>
-                <h3>
-                    {pokeinfo.data.name}
-                </h3>
+    function salvarPoke(){
+        const minhaLista = localStorage.getItem("@Poke");
+
+        let pokesalvos = JSON.parse(minhaLista) || [];
+        
+        const verifc = pokesalvos.some( (pokesalvo) => pokesalvo.id === pokesalvo.id)
+
+        // if(verifc){
+        //     toast.warn("Esse filme já foi salvo!")
+        //     return;
+        // }
+
+        pokesalvos.push(pokeinfo)    
+        localStorage.setItem("@Poke", JSON.stringify(pokesalvos))
+        // toast.success("Filme salvo com sucesso!")
+    }
+
+    if(loading){
+        return(
+            <div className="container">
+                <span>
+                    Carregando...
+                </span>
+            </div>
+        )
+    }
+
+    return(
+        
+        <div className={`containerinfo ${pokeinfo.types[0].type.name}`}>
+            <h1 key={pokeinfo.id}>
+                    {pokeinfo.name[0].toUpperCase() + pokeinfo.name.slice(1)}
+            </h1>
+            
+            <div className="allwithoutname">
+
+                    <img src={pokeinfo.sprites.other['official-artwork']?.front_default} alt={pokeinfo.data?.id}/>
                 
+
+
+
+                    <button onClick={salvarPoke}>
+                        Adicionar aos favoritos
+                    </button>
+            
+                <div className="info">
+                
+                <div>
+                    <span>Largura: {pokeinfo.weight}</span>
+                    <span>Altura: {pokeinfo.height}</span>
+                </div>
+
+                    <ul>
+                        {pokeinfo.stats.map((item) => {
+                            return(
+                                <li key={item.stat.name}>
+                                    <div>
+                                        <span>{item.stat.name[0].toUpperCase() + item.stat.name.slice(1)}</span>
+                                        <span>{item.base_stat}</span>
+                                    </div>
+                                    <div>
+                                        <div style={{ width: `${(item.base_stat / 255) * 100}%` }} />
+                                    </div>
+                                </li>
+                            )
+                        })}
+                    </ul>
+
+                    <ul>
+                    Habilidades:
+                        {pokeinfo.abilities.map((item) => {
+                            return(
+                                <li key={item.ability.name}>
+                                    {item.ability.name[0].toUpperCase() + item.ability.name.slice(1)}
+                                </li>   
+                            )
+                        })}
+                    </ul>
+
+
+
+                </div>
             </div>
         </div>
     )

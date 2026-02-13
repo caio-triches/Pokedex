@@ -9,8 +9,8 @@ function Header(){
                 <img src={PokedexLogo} alt="Pokedex Logo"/>
             </Link>
             
-            <Link to="fav-poke">
-                Meus Pokemons
+            <Link to="favpoke">
+                Meus Pokémons
             </Link>
         </header>
     )

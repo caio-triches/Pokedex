@@ -1,0 +1,171 @@
+/* cardpoke.css */
+
+.containerinfo {
+    min-height: calc(100vh - 100px);
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .containerinfo h1 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  
+  .allwithoutname {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1400px;
+  }
+  
+  /* Card do Pokemon */
+  .allwithoutname img {
+    width: 500px;
+    height: 500px;
+    object-fit: contain;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Card de Informações */
+  .info {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    min-width: 600px;
+  }
+  
+  .info > span {
+    display: block;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 0.5rem;
+  }
+  
+  .info > span strong {
+    font-weight: 700;
+  }
+  
+  /* Container de Largura e Altura */
+  .info > div:first-of-type {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1.5rem;
+  }
+  
+  .info > div:first-of-type span {
+    font-size: 1.1rem;
+    color: #333;
+  }
+  
+  .info > div:first-of-type span strong {
+    font-weight: 700;
+  }
+  
+  .info ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    margin-bottom: 1.5rem;
+  }
+  
+  /* Stats com barras */
+  .info ul:first-of-type li {
+    margin-bottom: 1rem;
+  }
+  
+  .info ul:first-of-type li > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 0.3rem;
+  }
+  
+  .info ul:first-of-type li > div:first-child span:first-child {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .info ul:first-of-type li > div:first-child span:last-child {
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #555;
+  }
+  
+  .info ul:first-of-type li > div:last-child {
+    width: 100%;
+    height: 20px;
+    background-color: #e0e0e0;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  .info ul:first-of-type li > div:last-child > div {
+    height: 100%;
+    background: linear-gradient(90deg, #4CAF50 0%, #8BC34A 100%);
+    border-radius: 10px;
+    transition: width 0.5s ease;
+  }
+  
+  /* Abilities - uma do lado da outra */
+  .info ul:last-of-type {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+  
+  .info ul:last-of-type li {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Cores por tipo de Pokémon */
+  .normal { background: linear-gradient(135deg, #A8A878 0%, #C6C6A7 100%); }
+  .fire { background: linear-gradient(135deg, #F08030 0%, #F5AC78 100%); }
+  .water { background: linear-gradient(135deg, #6890F0 0%, #9DB7F5 100%); }
+  .electric { background: linear-gradient(135deg, #F8D030 0%, #FAE078 100%); }
+  .grass { background: linear-gradient(135deg, #78C850 0%, #A7DB8D 100%); }
+  .ice { background: linear-gradient(135deg, #98D8D8 0%, #BCE6E6 100%); }
+  .fighting { background: linear-gradient(135deg, #C03028 0%, #D67873 100%); }
+  .poison { background: linear-gradient(135deg, #A040A0 0%, #C183C1 100%); }
+  .ground { background: linear-gradient(135deg, #E0C068 0%, #EBD69D 100%); }
+  .flying { background: linear-gradient(135deg, #A890F0 0%, #C6B7F5 100%); }
+  .psychic { background: linear-gradient(135deg, #F85888 0%, #FA92B2 100%); }
+  .bug { background: linear-gradient(135deg, #A8B820 0%, #C6D16E 100%); }
+  .rock { background: linear-gradient(135deg, #B8A038 0%, #D1C17D 100%); }
+  .ghost { background: linear-gradient(135deg, #705898 0%, #A292BC 100%); }
+  .dragon { background: linear-gradient(135deg, #7038F8 0%, #A27DFA 100%); }
+  .dark { background: linear-gradient(135deg, #705848 0%, #A29288 100%); }
+  .steel { background: linear-gradient(135deg, #B8B8D0 0%, #D1D1E0 100%); }
+  .fairy { background: linear-gradient(135deg, #EE99AC 0%, #F4BDC9 100%); }
+  
+  /* Responsivo */
+  @media (max-width: 768px) {
+    .allwithoutname {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .allwithoutname img {
+      width: 250px;
+      height: 250px;
+    }
+  
+    .info {
+      min-width: auto;
+      width: 100%;
+    }
+  
+    .containerinfo h1 {
+      font-size: 2rem;
+    }
+  }
