@@ -1,0 +1,93 @@
+.containerFav{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #FAFAFA;
+}
+
+.containerFav span{
+    font-size: 30px;
+}
+
+.containerFav p{
+    font-size: 20px;
+}
+
+.containerFav h1{
+    margin-top: 120px;
+    font-size: 40px;
+}
+
+.poke{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.poke ul{
+    list-style: none;
+}
+
+.poke li{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    margin: 20px 10px;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
+    border-radius: 20px;
+    height: 150px;
+    width: 850px;
+    padding: 20px;
+    color: aliceblue;
+    
+}
+
+.poke img{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 110px;
+    width: 110px;
+    padding: 10px;
+    border-radius: 20px;
+    
+}
+
+.infofav{
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-right: 40px;
+}
+
+.infofav button{
+    cursor: pointer;
+    background: linear-gradient(135deg, #c0392b, #e74c3c);
+    border: 0;
+    padding: 7px;
+    border-radius: 10px;
+
+    font-size: 15px;
+    color: #fff;
+}
+
+.infofav a{
+    background: linear-gradient(135deg, #2471a3, #5dade2);
+    color: #fff;
+    padding: 7px;
+    border-radius: 10px;
+    font-size: 15px;
+    text-decoration: none;
+}
+
+.infoimg{
+    display: flex;
+}
+
+.infoimg span{
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+    font-size: 30px;
+}

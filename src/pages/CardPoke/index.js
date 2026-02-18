@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 import "./cardpoke.css"
 
 
@@ -28,21 +29,21 @@ function CardPoke(){
 
         let pokesalvos = JSON.parse(minhaLista) || [];
         
-        const verifc = pokesalvos.some( (pokesalvo) => pokesalvo.id === pokesalvo.id)
+        const verifc = pokesalvos.some( (pokesalvo) => pokesalvo.id === pokeinfo.id)
 
-        // if(verifc){
-        //     toast.warn("Esse filme já foi salvo!")
-        //     return;
-        // }
+        if(verifc){
+            toast.warn("Esse Pokémon já foi salvo!")
+            return;
+        }
 
         pokesalvos.push(pokeinfo)    
         localStorage.setItem("@Poke", JSON.stringify(pokesalvos))
-        // toast.success("Filme salvo com sucesso!")
+        toast.success("Pokémon salvo com sucesso!")
     }
 
     if(loading){
         return(
-            <div className="container">
+            <div className="containerinfo">
                 <span>
                     Carregando...
                 </span>
@@ -51,22 +52,21 @@ function CardPoke(){
     }
 
     return(
-        
         <div className={`containerinfo ${pokeinfo.types[0].type.name}`}>
             <h1 key={pokeinfo.id}>
                     {pokeinfo.name[0].toUpperCase() + pokeinfo.name.slice(1)}
             </h1>
             
             <div className="allwithoutname">
-
+                <div className="cardImg">
                     <img src={pokeinfo.sprites.other['official-artwork']?.front_default} alt={pokeinfo.data?.id}/>
                 
-
-
-
                     <button onClick={salvarPoke}>
                         Adicionar aos favoritos
                     </button>
+                </div>
+
+                    
             
                 <div className="info">
                 
@@ -92,7 +92,6 @@ function CardPoke(){
                     </ul>
 
                     <ul>
-                    Habilidades:
                         {pokeinfo.abilities.map((item) => {
                             return(
                                 <li key={item.ability.name}>

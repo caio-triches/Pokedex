@@ -1,10 +1,12 @@
 header{
-    background-color: black;
+    background: linear-gradient(135deg, #0a0a0a, #1a1a1a);
     height: 100px;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: fixed;
+    z-index: 100;
 }
 
 header img{
@@ -12,10 +14,11 @@ header img{
     height: 70px;
     margin-left: 20px;
     cursor: pointer;
+
 }
 
-header a + a{
-    margin-right: 20px;
+.fav{
+    margin-right: 30px;
     text-decoration: none;
     color: rgb(0, 0, 0);
     background-color: rgb(255, 255, 255);
@@ -27,4 +30,40 @@ header a + a{
     border-radius: 10px;
     font-size: 14px;
     font-weight: bold;
+}
+
+
+
+.search-container {
+    display: flex;
+    align-items: center;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50px;
+    width: 200px;
+    height: 40px;
+    padding: 14px;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.search-container:focus-within {
+    background: rgba(255, 255, 255, 0.25);
+}
+
+.search-container input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #fff;
+    font-size: 16px;
+    width: 140px;
+}
+
+.search-container input::placeholder {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.search-icon {
+    color: rgba(255, 255, 255, 0.6);
+    flex-shrink: 0; 
 }

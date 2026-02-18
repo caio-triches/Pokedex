@@ -1,12 +1,15 @@
 import axios from "axios";
-import { use, useEffect, useState } from "react";
+import { useEffect, useState, useMemo } from "react";
+import { useSearch } from "../../context/SearchContext";
 import "./home.css"
 import endPoints from "../../services/api";
 import { Link } from "react-router-dom";
 
+
 // Info pokemon: https://pokeapi.co/api/v2/pokemon/1/
 
 function Home(){
+    const { busca } = useSearch();
     const [infopoke, setInfopoke] = useState([])
     const [loading, setLoading] = useState(true)
     
@@ -14,15 +17,21 @@ function Home(){
         getInfoPokemons();
     }, [])
 
-    const getInfoPokemons = () => {
-            axios.all(endPoints.map(item => axios.get(item)))
-            .then(res => setInfopoke(res))
+    const pokeFiltro = useMemo(() => {
+        const lowerpoke = busca.toLowerCase()
+        return infopoke.filter((poke) => poke.data.name.toLowerCase().includes(lowerpoke));
+    }, [busca, infopoke])
+
+
+    const getInfoPokemons = async () => {
+            const resposta = await axios.all(endPoints.map(item => axios.get(item)))
+            setInfopoke(resposta)
             setLoading(false)
     }
 
     if(loading){
         return(
-        <div>
+        <div className="container">
             <span>
                 Carregando...
             </span>
@@ -33,9 +42,11 @@ function Home(){
     return(
         <div className="container">
             <div className={`cardPokemon`}>
-                {/* <input placeholder="Pesquisar">
-                </input> */}
-                {infopoke.map(item => {
+                { pokeFiltro.length === 0 ? (
+                    <span> Pokémon não encontrado</span>
+                ) : ( 
+                
+                pokeFiltro.map(item => {
                     return(
                         <Link to={`/cardpoke/${item.data.id}`}>
                         <article key={item.data.id} className={`${item.data.types[0].type.name}`}>
@@ -47,7 +58,8 @@ function Home(){
                         </article>
                         </Link> 
                     )
-                })}
+                })
+            )}
             </div>
         </div>
     )

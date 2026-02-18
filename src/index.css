@@ -1,12 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=SN+Pro&display=swap');
+
 *{
   margin: 0;
   padding: 0;
+  outline: 0;
   box-sizing: border-box;
 }
 
 body{
-  font-family: Arial, Helvetica, sans-serif;
-  width: 100vw;
-  overflow-x: hidden;
-  background-color: #fffeff;
+  font-family: "SN Pro", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  width: 100%;
+  background-color: #FAFAFA;
 }
