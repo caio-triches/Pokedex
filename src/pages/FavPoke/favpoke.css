@@ -7,10 +7,12 @@
 
 .containerFav span{
     font-size: 30px;
+    margin-top: 160px;
+    
 }
 
 .containerFav p{
-    font-size: 20px;
+    font-size: 30px;
 }
 
 .containerFav h1{

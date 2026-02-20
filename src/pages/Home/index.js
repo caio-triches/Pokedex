@@ -39,13 +39,20 @@ function Home(){
         ) 
     }
 
+    if(pokeFiltro.length === 0){
+        return(
+            <div className="container">
+                <span>
+                    Nenhum pokémon encontrado!
+                </span>
+            </div>
+        )
+    }
+
     return(
         <div className="container">
             <div className={`cardPokemon`}>
-                { pokeFiltro.length === 0 ? (
-                    <span> Pokémon não encontrado</span>
-                ) : ( 
-                
+                {
                 pokeFiltro.map(item => {
                     return(
                         <Link to={`/cardpoke/${item.data.id}`}>
@@ -59,7 +66,7 @@ function Home(){
                         </Link> 
                     )
                 })
-            )}
+            }
             </div>
         </div>
     )

@@ -7,7 +7,7 @@ import "./cardpoke.css"
 
 function CardPoke(){
     const { id } = useParams();
-    const [pokeinfo, setPokeinfo] = useState(null);
+    const [pokeinfo, setPokeinfo] = useState({});
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {
@@ -29,7 +29,7 @@ function CardPoke(){
 
         let pokesalvos = JSON.parse(minhaLista) || [];
         
-        const verifc = pokesalvos.some( (pokesalvo) => pokesalvo.id === pokeinfo.id)
+        const verifc = pokesalvos.some( pokesalvo => pokesalvo.id === pokeinfo.id)
 
         if(verifc){
             toast.warn("Esse Pokémon já foi salvo!")
