@@ -47,28 +47,30 @@ function FavPoke(){
     }
 
     if(pokeFiltro.length === 0){
-        return(
-            <div className="containerFav">
-                <span>
-                    Não achamos nenhum pokemon!
-                </span>
-                    
-              
-            </div>
-        )
+        if(pokefav.length === 0){
+            return(
+                <div className="containerFav">
+                    <span>
+                            Você não possui nenhum pokémon favoritado!
+                    </span>
+                </div>
+                )
+        }else{
+            return(
+                <div className="containerFav">
+                    <span>
+                        Não achamos nenhum pokemon!
+                    </span>
+                        
+                  
+                </div>
+            )
+        }
     }
 
-    // if(pokefav.length === 0){
-    //     return(
-    //         <div className="containerFav">
-    //             <span>
-    //                 Você não possui nenhum pokémon favoritado!
-    //             </span>
-    //         </div>
-    //     )
-    // }
+    
 
-    if(pokeFiltro.length !== 0){
+    
         return(
             <div className="containerFav">
                 <h1>
@@ -101,15 +103,7 @@ function FavPoke(){
                 
                 </div>
             </div>
-        )} else {
-            return(
-            <div className="containerFav">
-                <span>
-                    Você não possui nenhum pokémon favoritado!
-                </span>
-            </div>
         )
-        }
     
 }
 

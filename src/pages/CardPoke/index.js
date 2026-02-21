@@ -59,6 +59,16 @@ function CardPoke(){
             
             <div className="allwithoutname">
                 <div className="cardImg">
+                    <ul>
+                        {pokeinfo.types.map(item => {
+                            return(
+                            <li key={item.type.name} className={`${item.type.name}`}>
+                                 {item.type.name.toUpperCase()[0] + item.type.name.slice(1)}
+                            </li>
+                            )
+                        })}
+                    </ul>
+
                     <img src={pokeinfo.sprites.other['official-artwork']?.front_default} alt={pokeinfo.data?.id}/>
                 
                     <button onClick={salvarPoke}>

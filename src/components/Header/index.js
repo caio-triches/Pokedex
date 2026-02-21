@@ -23,16 +23,14 @@ function Header(){
                 <div className="search-container">
                     <Search size={18} className="search-icon" />
                     
-                    <input placeholder="Pesquisar"  type="text" value={busca} onChange={(ev) => setBusca(ev.target.value)}>
-                    </input>
+                    <input placeholder="Pesquisar"  type="text" value={busca} onChange={(ev) => setBusca(ev.target.value)}/>
+                    
                 </div>
             )}
             
             <Link to="favpoke" className="fav">
                 Meus Pokémons
             </Link>
-
-            
         </header>
     )
 }
